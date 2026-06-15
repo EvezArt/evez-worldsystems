@@ -100,8 +100,8 @@ def optimize(budget_billions: float = 50):
 
 @app.get("/health/status")
 def health_status():
-    global_doctors = (DOCTORS_PER_10K * POP_M / 10000).sum()
-    global_needed = (WHO_THRESHOLD * POP_M / 10000).sum()
+    global_doctors = (DOCTORS_PER_10K * POP_M * 100).sum()  # doctors_per_10k * pop_millions * (1M/10K)
+    global_needed = (WHO_THRESHOLD * POP_M * 100).sum()
     return {
         "global_doctors_millions": round(global_doctors / 1e6, 2),
         "global_needed_millions": round(global_needed / 1e6, 2),
