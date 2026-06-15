@@ -98,6 +98,11 @@ def optimize(budget_billions: float = 50):
     }
 
 
+@app.get("/health")
+def health():
+    import time
+    return {"status": "ok", "service": "health-solver", "version": "1.0.0", "ts": int(time.time())}
+
 @app.get("/health/status")
 def health_status():
     global_doctors = (DOCTORS_PER_10K * POP_M * 100).sum()  # doctors_per_10k * pop_millions * (1M/10K)

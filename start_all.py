@@ -2,7 +2,7 @@
 """EVEZ World Systems — Start all solvers."""
 import subprocess, sys, os, time
 
-os.chdir("/home/openclaw/evez-worldsystems")
+os.chdir("/home/openclaw/.openclaw/workspace/repos/evez-worldsystems")
 
 SERVICES = [
     ("hunger_solver:app", 8092),
